@@ -869,6 +869,8 @@ static void probe_hwif(ide_hwif_t *hwif)
 			drive->no_io_32bit = 1;
 		else
 			drive->no_io_32bit = drive->id->dword_io ? 1 : 0;
+                /* force 32 bit I/O so that boot time is a little faster */
+                drive->io_32bit = 1;
 	}
 }
 
